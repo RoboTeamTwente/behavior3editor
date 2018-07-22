@@ -19,7 +19,7 @@ function fileStorageService(nodejsService) {
 
   function save(path, data) {
     if (typeof data !== 'string') {
-      try { data = JSON3.stringify(data); } catch (e) {}
+      try { data = JSON3.stringify(data, null, 2); } catch (e) {}
     }
 
     var file = fs.openSync(path+'~', 'w');

@@ -15,7 +15,7 @@ function localStorageService($window) {
   return service;
 
   function save(path, data) {
-    try { data = JSON.stringify(data); } catch (e) {}
+    try { data = JSON.stringify(data, null, 2); } catch (e) {}
     $window.localStorage[path] = data;
   }
   function load(path) {
